@@ -22,3 +22,5 @@ offered by the Research Software Management team.
 
 See the [Courses](/courses/) page for the full list, or [Materials](/materials/)
 for self-guided lessons you can work through on your own.
+
+Check the [Agenda](/agenda/) for upcoming session dates.

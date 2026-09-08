@@ -1,36 +1,82 @@
-title: RSM Courses
-description: >-
-  Course offerings and self-guided teaching materials from the
-  Research Software Management team.
-baseurl: "" # leave empty for a <org>.github.io root site
-url: "https://rsm-courses.github.io"
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Theme: remote_theme works out of the box on GitHub Pages, no gem installs needed.
-remote_theme: pages-themes/minimal@v0.2.0
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: RSM Courses
+description: "Course offerings and self-guided teaching materials from the Research Software Management team."
+url: "https://rsm-courses.github.io"
+baseurl: ""
+
+# Theme settings
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
-  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-include-cache
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+permalink: pretty
+aux_links:
+  Kevin Lin:
+    - 'https://kevinl.info'
+  Just the Class on GitHub:
+    - 'https://github.com/kevinlin1/just-the-class'
+footer_content:
 
+# Collections for website data
 collections:
   courses:
     output: true
     permalink: /courses/:path/
-
+  events:
+    output: true
+    permalink: /agenda/:path/
+# Default layouts for each collection type
 defaults:
   - scope:
-      path: ""
-      type: "courses"
+      path: ''
+      type: staffers
     values:
-      layout: "course"
+      layout: staffer
+      height: 300
+      subpath: '/assets/images/'
+      width: 300
+  - scope:
+      path: ''
+      type: modules
+    values:
+      layout: module
+  - scope:
+      path: ''
+      type: schedules
+    values:
+      layout: schedule
+  - scope:
+      path: ''
+      type: announcements
+    values:
+      layout: announcement
 
-markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
 
-nav:
-  - title: Home
-    url: /
-  - title: Courses
-    url: /courses/
-  - title: Materials
-    url: /materials/
+liquid:
+  error_mode: strict
+  strict_filters: true
