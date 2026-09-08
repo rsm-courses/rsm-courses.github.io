@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+{% if page.status %}<p><em>Status: {{ page.status }}</em></p>{% endif %}
+{% if page.partners %}
+<p><strong>Partners:</strong> {{ page.partners | join: ", " }}</p>
+{% endif %}
+
+{{ content }}
+
+<p><a href="{{ '/courses/' | relative_url }}">&larr; Back to all courses</a></p>
