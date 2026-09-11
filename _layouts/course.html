@@ -9,4 +9,4 @@ layout: default
 
 {{ content }}
 
-<p><a href="{{ '/courses/' | relative_url }}">&larr; Back to all courses</a></p>
+<p><a href="{{ page.back_url | default: '/courses/' | relative_url }}">&larr; {{ page.back_title | default: "Back to all courses" }}</a></p>
